@@ -31,7 +31,7 @@ startBtnJs.addEventListener("click", () => {
 recognition.onresult = (e) => {
     console.log(e.results[e.results.length - 1][0].transcript.trim());
     let spell = e.results[e.results.length - 1][0].transcript.trim();
-    if (spell === 'hello'){
+    if (spell === 'abracadabra'){
       currSpell = true;
       
       
@@ -40,7 +40,7 @@ recognition.onresult = (e) => {
       recognition.stop();
       currSpell = false;
     }
-    
+  recognition.start(); 
 }
 
 
