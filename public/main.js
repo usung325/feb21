@@ -1,3 +1,6 @@
+// import { currSpell } from "./sketch.js";
+let currSpell = false;
+
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
 const SpeechGrammarList =
@@ -26,5 +29,21 @@ startBtnJs.addEventListener("click", () => {
 });
 
 recognition.onresult = (e) => {
-    console.log(e);
+    console.log(e.results[e.results.length - 1][0].transcript.trim());
+    let spell = e.results[e.results.length - 1][0].transcript.trim();
+    if (spell === 'hello'){
+      currSpell = true;
+      
+      
+    }
+    else if (spell === 'stop'){
+      recognition.stop();
+      currSpell = false;
+    }
+    
 }
+
+
+export { currSpell };
+
+// spellActive = false;
