@@ -10,7 +10,7 @@ let timeCount = 0;
 new p5(function(p5){
 
   p5.setup = function(){
-    p5.createCanvas(1920, 1080);
+    p5.createCanvas(3000, 1080);
   }
 
   p5.draw = function(){
